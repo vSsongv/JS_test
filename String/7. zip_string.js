@@ -5,10 +5,11 @@ function compress(s) {
     return [...alphaSet].reduce(
         (res, alpha) => (
             res.replace(new RegExp(`(${alpha}+)`, 'g'),
-                (target) => target.length > 1 ? `${target[0]}${target.length}` : target[0]
+                (target) => target.length > 1 ? `${target[0]}${target.length}` : target
             )
         ), s
     );
 }
 
 console.log(compress("ABBCCCE")); // => AB2C3E
+console.log(compress("AABBBCCDDDDE")); // => A2B3C2D4E

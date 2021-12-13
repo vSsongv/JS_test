@@ -7,13 +7,16 @@ const todos = [
   { id: 1, content: 'Javascript', completed: false }
 ];
 
-const render = todos => todos.map(({ id, content }) =>
+/** @type {(todos: any[]) => string} */
+
+const render = todos => todos.map(({ id, content, completed }) =>
   `<li id="${id}">
-  <label><input type="checkbox">${content}</label>
-</li>`
+    <label><input type="checkbox" ${completed ? 'checked' : ''}>${content}</label>
+  </li>`
 ).join('')
 
 console.log(render(todos));
+
 /*
 <li id="3">
   <label><input type="checkbox">HTML</label>

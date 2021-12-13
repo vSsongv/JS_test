@@ -7,8 +7,8 @@ const todos = [
 ];
 
 //filter이용
-// const countCompletedTodos = todos => todos.filter(todo => todo.completed === true).length;
+const countCompletedTodos = todos => todos.filter(todo => todo.completed).length;
 //reduce 이용
-const countCompletedTodos = todos => todos.reduce((cnt, todo) => (todo.completed ? cnt += 1 : cnt), 0);
+// const countCompletedTodos = todos => todos.reduce((cnt, todo) => (todo.completed ? cnt += 1 : cnt), 0);
 
 console.log(countCompletedTodos(todos)); // 1

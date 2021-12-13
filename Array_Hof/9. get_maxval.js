@@ -7,8 +7,12 @@ const todos = [
 ];
 // 배열로 만들고 max 구하기
 // const getMaxId = todos => todos.length ? Math.max(...todos.map(todo => todo.id)) : 0;
+
 // reduce 이용
-const getMaxId = todos => todos.reduce((max, todo) => (todo.id > max ? todo.id : max), 0);
+// const getMaxId = todos => todos.reduce((max, todo) => (todo.id > max ? todo.id : max), 0);
+
+//기본값으로 0 지정.
+const getMaxId = todos => Math.max(...todos.map(todo => todo.id), 0);
 
 console.log(getMaxId(todos)); // 3
 console.log(getMaxId([])); // 0

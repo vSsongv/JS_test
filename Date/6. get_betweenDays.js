@@ -9,7 +9,7 @@ function diffDays(date1, date2) {
     const diffSecs = date2.getTime() - date1.getTime();
     const diffDays = diffSecs / SEC / MIN / HOUR / DAY;
 
-    console.log(diffDays);
+    return diffDays;
 }
 
-diffDays(new Date('2021/01/01'), new Date('2021/12/31')); // => 364
+console.log(diffDays(new Date('2021/01/01'), new Date('2021/12/31'))); // => 364

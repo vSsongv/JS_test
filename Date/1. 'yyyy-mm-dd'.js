@@ -3,11 +3,16 @@
 function formatDate(date) {
     const year = date.getFullYear();
     let month = date.getMonth() + 1;
-    month = month > 9 ? String(month) : '0' + String(month);
+    month = format(month);
     let day = date.getDate();
-    day = day > 9 ? String(day) : '0' + String(day);
-    console.log(`${year}-${month}-${day}`);
+    day = format(day);
+    return `${year}-${month}-${day}`;
 }
 
-formatDate(new Date('2021/07/24')); // => "2021-07-24"
-formatDate(new Date('1900/1/4')); // => "1900-01-04"
+const formatDate = (() => {
+    const format = n => (n < 10 ? '0' + n : '' + n);
+    return date => `${date.getFullYear()}-${format(date.getMonth() + 1)}-${format(date.getDate())}`;
+})();
+
+console.log(formatDate(new Date('2021/07/24'))); // => "2021-07-24"
+console.log(formatDate(new Date('1900/1/4'))); // => "1900-01-04"

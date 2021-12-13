@@ -2,7 +2,7 @@
 
 function isPalindrome(s) {
     const str = s.toUpperCase().replace(/[^A-Z0-9]/g, '');
-    return str === str.split('').reverse().join(''); // true?false왜 안됨?
+    return str === str.split('').reverse().join('');
 }
 
 console.log(isPalindrome('A man, a plan, a canal: Panama')); // => true
